@@ -1,4 +1,4 @@
-﻿namespace Console
+﻿namespace ProgramConsole
 {
     internal class Program
     {
