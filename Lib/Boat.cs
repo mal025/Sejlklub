@@ -21,6 +21,7 @@ namespace Lib
 
         public int BuildYear { get; set; }
 
+        public string Description { get; set; }
 
-}
+    }
 }
