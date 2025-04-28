@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lib
+{
+    internal class Event
+    {
+        public DateTime Time { get; set; }
+        public string Description { get; set; }
+        public string Location { get; set; }
+        public int Capacity { get; set; }
+        public Member Creator { get; set; }
+        public List<Member> Member { get; set; }
+        public string Requirements { get; set; }
+        public List<Booking> Booking { get; set; }
+        public int ID { get; set; }
+
+
+
+
+
+
+    }
+}
