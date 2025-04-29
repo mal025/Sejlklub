@@ -11,7 +11,7 @@ namespace Lib.Repo
     {
         List<Member> _members = new List<Member>();
 
-        public MemberCollectionRepo() // Added mockup members to the member list
+        public MemberCollectionRepo() // Added mockup members to the member list from chatgpt
         {
             _members.Add(new Member(32, "Male", "Anders Jensen", 1, "+45 20451234", "anders.jensen@example.dk", "user"));
             _members.Add(new Member(28, "Female", "Sofie Hansen", 2, "+45 22556677", "sofie.hansen@example.dk", "admin"));
