@@ -17,10 +17,15 @@ namespace Lib
         public string UserType { get; set; }
         public List<Booking> Booking { get; set; }
 
-
-
-
-
-
+        public Member(int age, string gender, string name, int id, string phoneNumber, string email, string userType)
+        {
+            Age = age;
+            Gender = gender;
+            Name = name;
+            ID = id;
+            PhoneNumber = phoneNumber;
+            Email = email;
+            UserType = userType;
+        }
     }
 }

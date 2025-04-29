@@ -18,7 +18,15 @@ namespace Lib
         public string Type { get; set; }
         public int ID { get; set; }
 
-
+        public Booking(Member member, List<DateTime> timeFrame, Boat boat, string description, string type, int iD)
+        {
+            Member = member;
+            TimeFrame = timeFrame;
+            Boat = boat;
+            Description = description;
+            Type = type;
+            ID = iD;
+        }
 
     }
 }

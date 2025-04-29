@@ -18,10 +18,18 @@ namespace Lib
         public List<Booking> Booking { get; set; }
         public int ID { get; set; }
 
-
-
-
-
-
+        public Event(DateTime time, string description, string location, int capacity, Member creator,
+                 List<Member> member, string requirements, List<Booking> booking, int id)
+        {
+            Time = time;
+            Description = description;
+            Location = location;
+            Capacity = capacity;
+            Creator = creator;
+            Member = member;
+            Requirements = requirements;
+            Booking = booking;
+            ID = id;
+        }
     }
 }
