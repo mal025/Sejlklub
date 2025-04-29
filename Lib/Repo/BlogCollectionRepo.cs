@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lib.Repo
 {
-    class BlogRepo : IBlogRepo
+    class BlogCollectionRepo : IBlogRepo
     {
     }
 }

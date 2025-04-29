@@ -9,7 +9,12 @@ namespace Lib.Repo
 {
     public class MemberCollectionRepo : IMemberRepo
     {
-        List<Member> _members = new List<Member>();
+        protected List<Member> _members = new List<Member>();
+
+        public virtual void Add(Member member)
+        {
+            _members.Add(member);
+        }
 
         public MemberCollectionRepo() // Added mockup members to the member list from chatgpt
         {
