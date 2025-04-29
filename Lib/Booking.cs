@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Lib
 {
-    internal class Booking
+    public class Booking
     {
 
 

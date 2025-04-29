@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lib
 {
-    internal class Member
+    public class Member
     {
         public int Age { get; set; }
         public string Gender { get; set; }

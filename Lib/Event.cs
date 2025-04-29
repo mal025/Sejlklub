@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lib
 {
-    internal class Event
+    public class Event
     {
         public DateTime Time { get; set; }
         public string Description { get; set; }
