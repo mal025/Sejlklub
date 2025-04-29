@@ -18,7 +18,8 @@ namespace Lib.Model
         public string UserType { get; set; }
         public List<Booking> Bookings { get; set; }
 
-        public Member(int age, string gender, string name, int id, string phoneNumber, string email, string userType)
+        public string Password;
+        public Member(int age, string gender, string name, int id, string phoneNumber, string email, string userType="user", string password="1234")
         {
             Age = age;
             Gender = gender;
@@ -27,6 +28,7 @@ namespace Lib.Model
             PhoneNumber = phoneNumber;
             Email = email;
             UserType = userType;
+            Password = password;
         }
 
         public void AddBooking(Booking booking) // Adds the booking to the members list of bookings
