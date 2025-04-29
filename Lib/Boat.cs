@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Lib
 {
-    class Boat
+    public class Boat
     {
         public int Capacity { get; set; }
         public string Name { get; set; }
