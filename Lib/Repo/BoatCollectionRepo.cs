@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,10 @@ namespace Lib.Repo
         protected List<Boat> _boats = new List<Boat>();
         public virtual void Add(Boat boat)
         {
+
             _boats.Add(boat);
+            //Debug.WriteLine("Unsuccessfully added boat");
+
         }
 
         public BoatCollectionRepo() // Adds mockup boats from chatgpt to the list

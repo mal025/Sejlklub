@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text.Json;
 using Lib.Model;
 
@@ -23,6 +24,7 @@ namespace Lib.Repo
         public override void Add(Boat boat)
         {
             base.Add(boat);
+            //Debug.WriteLine("Successfully Added");
             SaveFile();
         }
 
