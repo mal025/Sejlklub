@@ -3,10 +3,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Lib.Model;
+using Lib.Repo;
 
 namespace Lib.Services
 {
-    class BookingService
+    public class BookingService
     {
+        private IBookingRepo _bookingRepo;
+
+        public BookingService(IBookingRepo bookingRepo)
+        {
+            _bookingRepo = bookingRepo;
+        }
+        public List<Booking> GetAll()
+        {
+            return _bookingRepo.GetAll();
+        }
+
+        public void Add(Booking booking)
+        {
+            _bookingRepo.Add(booking);
+        }
+        public void RemoveByID(int id)
+        {
+            _bookingRepo.RemoveByID(id);
+        }
     }
 }

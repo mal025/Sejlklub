@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lib.Repo
 {
-    interface IEventRepo
+    public interface IEventRepo
     {
     }
 }
