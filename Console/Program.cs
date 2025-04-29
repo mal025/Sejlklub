@@ -13,7 +13,9 @@ namespace ProgramConsole
 
             Boat boat1 = new Boat();
 
-            BoatService.Add(boat1);
+            BoatService bs = new BoatService(new BoatCollectionRepo());
+
+            bs.Add(boat1);
 
 
         }
