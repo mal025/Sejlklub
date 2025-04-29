@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lib.Repo
 {
-    interface IBookingRepo
+    public interface IBookingRepo
     {
     }
 }

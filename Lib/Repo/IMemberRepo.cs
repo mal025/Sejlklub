@@ -7,7 +7,7 @@ using Lib.Model;
 
 namespace Lib.Repo
 {
-    interface IMemberRepo
+    public interface IMemberRepo
     {
         public List<Member> GetAll();
     }

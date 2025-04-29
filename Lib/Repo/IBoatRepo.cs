@@ -7,7 +7,7 @@ using Lib.Model;
 
 namespace Lib.Repo
 {
-    interface IBoatRepo
+    public interface IBoatRepo
     {
         public List<Boat> GetAll();
 
