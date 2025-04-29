@@ -9,7 +9,11 @@ namespace Lib.Repo
 {
     public class BoatCollectionRepo : IBoatRepo
     {
-        List<Boat> _boats = new List<Boat>();
+        protected List<Boat> _boats = new List<Boat>();
+        public virtual void Add(Boat boat)
+        {
+            _boats.Add(boat);
+        }
 
         public BoatCollectionRepo() // Adds mockup boats from chatgpt to the list
         {
