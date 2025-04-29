@@ -10,6 +10,9 @@ namespace ProgramConsole
         {
             Console.WriteLine("Hello, World!");
             //Booking booking = new Booking();
+            
+            
+            BoatService.Add()
 
 
         }
