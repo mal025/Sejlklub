@@ -14,7 +14,7 @@ namespace Lib.Repo
         //denne metode skal kaldes hver gang vi gerne vil trække data fra vores JSON
         private void LoadFile()
         {
-            string path = "member.json";
+            string path = "members.json";
             string json = File.ReadAllText(path);
 
             _members = JsonSerializer.Deserialize<List<Member>>(json);

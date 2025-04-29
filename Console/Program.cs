@@ -16,11 +16,11 @@ namespace ProgramConsole
 
 
             //bs.Add(boat1);
-            MemberService ms = new MemberService(new MemberJSONRepo());
-            Member member1 = new Member(18,"male","Joakim",16,"11111111","arbitrary@arbitrary.com");
-            ms.Add(member1);
+            //MemberService ms = new MemberService(new MemberJSONRepo());
+            //Member member1 = new Member(18,"male","Joakim",16,"11111111","arbitrary@arbitrary.com");
+            //ms.Add(member1);
 
-            
+
 
 
         }
