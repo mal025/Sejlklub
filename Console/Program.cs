@@ -1,4 +1,4 @@
-﻿using Lib;
+﻿using Lib.Model;
 namespace ProgramConsole
 {
     internal class Program
