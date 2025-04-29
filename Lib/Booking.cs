@@ -11,9 +11,9 @@ namespace Lib
     {
 
 
-        public Member member { get; set; }
+        public Member Member { get; set; }
         public List<DateTime> TimeFrame { get; set; }
-        public Boat boat { get; set; }
+        public Boat Boat { get; set; }
         public string Description { get; set; }
         public string Type { get; set; }
         public int ID { get; set; }
