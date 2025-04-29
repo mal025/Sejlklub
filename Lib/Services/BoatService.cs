@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
+using Lib.Model;
 using Lib.Repo;
 
 namespace Lib.Services
@@ -15,6 +16,11 @@ namespace Lib.Services
         public BoatService(IBoatRepo boatRepo)
         {
             _boatRepo = boatRepo;
+        }
+
+        public List<Boat> GetAll()
+        {
+            return _boatRepo.GetAll();
         }
 
     }
