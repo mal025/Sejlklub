@@ -9,8 +9,6 @@ namespace Lib
 {
     public class Booking
     {
-
-
         public Member Member { get; set; }
         public List<DateTime> TimeFrame { get; set; }
         public Boat Boat { get; set; }
