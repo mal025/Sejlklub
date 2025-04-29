@@ -1,5 +1,5 @@
 ﻿using Lib.Model;
-using Lib.Repo
+using Lib.Repo;
 
 using Lib.Services;
 namespace ProgramConsole
@@ -10,9 +10,10 @@ namespace ProgramConsole
         {
             Console.WriteLine("Hello, World!");
             //Booking booking = new Booking();
-            
-            
-            BoatService.Add()
+
+            Boat boat1 = new Boat();
+
+            BoatService.Add(boat1);
 
 
         }
