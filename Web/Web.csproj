@@ -10,4 +10,12 @@
     <ProjectReference Include="..\Lib\Lib.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\Images\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Images\hilleroed-sejlklub.jpg" />
+  </ItemGroup>
+
 </Project>
