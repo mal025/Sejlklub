@@ -11,5 +11,7 @@ namespace Lib.Repo
     {
         public List<Boat> GetAll();
 
+        public void Add(Boat boat);
+
     }
 }

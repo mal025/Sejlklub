@@ -1,4 +1,7 @@
 ﻿using Lib.Model;
+using Lib.Repo
+
+using Lib.Services;
 namespace ProgramConsole
 {
     internal class Program
@@ -7,6 +10,7 @@ namespace ProgramConsole
         {
             Console.WriteLine("Hello, World!");
             //Booking booking = new Booking();
+
 
         }
     }

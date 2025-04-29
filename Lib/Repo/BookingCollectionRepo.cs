@@ -10,7 +10,7 @@ namespace Lib.Repo
     public class BookingCollectionRepo : IBookingRepo
     {
         public List<Booking> _bookings = new List<Booking>();
-        public void Add(Booking booking)
+        public virtual void Add(Booking booking)
         {
             _bookings.Add(booking);
         }

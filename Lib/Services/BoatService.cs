@@ -23,5 +23,10 @@ namespace Lib.Services
             return _boatRepo.GetAll();
         }
 
+        public void Add(Boat boat)
+        {
+            _boatRepo.Add(boat);
+        }
+
     }
 }
