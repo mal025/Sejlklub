@@ -6,7 +6,7 @@ namespace ProgramConsole
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
-            Booking booking = new Booking();
+            //Booking booking = new Booking();
 
         }
     }
