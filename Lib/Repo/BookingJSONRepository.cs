@@ -4,8 +4,9 @@ using Lib.Model;
 
 namespace Lib.Repo
 {
-    public class BookingJSONRepository : BookingCollectionRepo
+    public class BookingJSONRepository : IBookingRepo
     {
+        public List<Booking> _bookings = new List<Booking>();
         public BookingJSONRepository()
         {
             LoadFile();
@@ -20,9 +21,18 @@ namespace Lib.Repo
             _bookings = JsonSerializer.Deserialize<List<Booking>>(json);
         }
 
-        public override void Add(Booking booking)
+        public void Add(Booking booking)
         {
-            base.Add(booking);
+            _bookings.Add(booking);
+            SaveFile();
+        }
+        public List<Booking> GetAll()
+        {
+            return _bookings;
+        }
+        public void RemoveByID(int id)
+        {
+            _bookings.RemoveAll(booking => booking.ID == id);
             SaveFile();
         }
 

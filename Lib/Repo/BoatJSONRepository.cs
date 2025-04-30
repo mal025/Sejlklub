@@ -5,8 +5,9 @@ using Lib.Model;
 
 namespace Lib.Repo
 {
-    public class BoatJSONRepository : BoatCollectionRepo
+    public class BoatJSONRepository : IBoatRepo
     {
+        protected List<Boat> _boats = new List<Boat>();
         public BoatJSONRepository()
         {
             LoadFile();
@@ -20,11 +21,14 @@ namespace Lib.Repo
             
             _boats = JsonSerializer.Deserialize<List<Boat>>(json);
         }
-        public override void Add(Boat boat)
+        public void Add(Boat boat)
         {
-            base.Add(boat);
-            //Debug.WriteLine("Successfully Added");
+            _boats.Add(boat);
             SaveFile();
+        }
+        public List<Boat> GetAll()
+        {
+            return _boats;
         }
 
         //denne metode skal kaldes når vi vil putte data i vores JSON

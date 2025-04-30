@@ -4,8 +4,9 @@ using Lib.Model;
 
 namespace Lib.Repo
 {
-    public class MemberJSONRepo : MemberCollectionRepo
+    public class MemberJSONRepo : IMemberRepo
     {
+        protected List<Member> _members = new List<Member>();
         public MemberJSONRepo()
         {
             LoadFile();
@@ -20,10 +21,14 @@ namespace Lib.Repo
             _members = JsonSerializer.Deserialize<List<Member>>(json);
         }
 
-        public override void Add(Member member)
+        public void Add(Member member)
         {
-            base.Add(member);
+            _members.Add(member);
             SaveFile();
+        }
+        public List<Member> GetAll()
+        {
+            return _members;
         }
 
         //denne metode skal kaldes når vi vil putte data i vores JSON
