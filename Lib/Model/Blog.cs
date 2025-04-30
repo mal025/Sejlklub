@@ -21,10 +21,9 @@ namespace Lib.Model
             Author = member;
         }
 
-            
-
-
-
-
+        public Blog(string title)
+        {
+            Title = title;
+        }
     }
 }
