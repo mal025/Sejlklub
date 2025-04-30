@@ -19,7 +19,9 @@ namespace Lib.Model
         public string Measurements { get; set; }
         public int BuildYear { get; set; }
         public string Description { get; set; }
-        public Boat() { }
+        public Boat() 
+        { 
+        }
 
         public Boat(int capacity, string name, int id, string type, string model, int sailNumber,
                 string motorInformation, string measurements, int buildYear, string description)
