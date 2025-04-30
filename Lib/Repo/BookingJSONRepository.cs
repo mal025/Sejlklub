@@ -14,7 +14,7 @@ namespace Lib.Repo
         //denne metode skal kaldes hver gang vi gerne vil trække data fra vores JSON
         private void LoadFile()
         {
-            string path = "bookings.json";
+            string path = @"..\..\..\JSON\bookings.json";
             string json = File.ReadAllText(path);
 
             _bookings = JsonSerializer.Deserialize<List<Booking>>(json);
@@ -29,7 +29,7 @@ namespace Lib.Repo
         //denne metode skal kaldes når vi vil putte data i vores JSON
         private void SaveFile()
         {
-            string path = "bookings.json";
+            string path = @"..\..\..\JSON\bookings.json";
             File.WriteAllText(path, JsonSerializer.Serialize(_bookings));
         }
     }

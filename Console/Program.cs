@@ -11,8 +11,8 @@ namespace ProgramConsole
             Console.WriteLine("Hello, World!");
             //Booking booking = new Booking();
 
-            //BoatService bs = new BoatService(new BoatJSONRepository());
-            //Boat boat1 = new Boat();
+            BoatService bs = new BoatService(new BoatJSONRepository());
+            Boat boat1 = new Boat();
 
 
             //bs.Add(boat1);
