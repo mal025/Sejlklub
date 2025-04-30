@@ -22,9 +22,6 @@ namespace ProgramConsole
             //Member member1 = new Member(18,"male","Joakim",16,"11111111","arbitrary@arbitrary.com");
             //ms.Add(member1);
 
-            BlogService blogService = new BlogService(new BlogJSONRepository());
-            blogService.Add(new Blog("string title"));
-
 
 
         }
