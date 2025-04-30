@@ -4,8 +4,14 @@ using Lib.Model;
 
 namespace Lib.Repo
 {
-    public class BlogJSONRepository : BlogCollectionRepo
+    public class BlogJSONRepository : IBlogRepo
     {
+        protected List<Blog> _blogs = new List<Blog>();
+        public void Add(Blog blog)
+        {
+            _blogs.Add(blog);
+            SaveFile();
+        }
         public BlogJSONRepository()
         {
             LoadFile();
@@ -18,12 +24,6 @@ namespace Lib.Repo
             string json = File.ReadAllText(path);
 
             _blogs = JsonSerializer.Deserialize<List<Blog>>(json);
-        }
-
-        public override void Add(Blog blog)
-        {
-            base.Add(blog);
-            SaveFile();
         }
 
         //denne metode skal kaldes når vi vil putte data i vores JSON
