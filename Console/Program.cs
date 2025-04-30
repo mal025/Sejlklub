@@ -17,28 +17,40 @@ namespace ProgramConsole
             BoatService boatService = new BoatService(new BoatJSONRepository());
             EventService eventService = new EventService(new EventJSONRepository());
             MemberService memberService = new MemberService(new MemberJSONRepo());
- 
-
-
-            //bs.Add(boat1);
-            //MemberService ms = new MemberService(new MemberJSONRepo());
-            //Member member1 = new Member(18,"male","Joakim",16,"11111111","arbitrary@arbitrary.com");
-            //ms.Add(member1);
-
-            /*BlogService blogService = new BlogService(new BlogJSONRepository());
-            blogService.Add(new Blog());*/
 
             testCLI();
-
             void testCLI()
             {
-                Console.WriteLine("Hillerød Sejlklub test program. Hvad ville du teste");
+                Console.WriteLine("Hillerød Sejlklub test program. Hvad ville du teste?");
                 Console.WriteLine("1. Blog");
                 Console.WriteLine("2. Både");
                 Console.WriteLine("3. Booking");
                 Console.WriteLine("4. Begivenheder");
                 Console.WriteLine("5. Medlemmer");
-
+                Console.Write("Indsæt dit valg: ");
+                int choice = int.Parse(Console.ReadLine());
+                
+                switch (choice)
+                {
+                    case 1:
+                        Console.WriteLine("Hvad ville du teste med Blog?");
+                        break;
+                    case 2:
+                        Console.WriteLine("Hvad ville du teste med Både?");
+                        break;
+                    case 3:
+                        Console.WriteLine("Hvad ville du teste med Booking?");
+                        break;
+                    case 4:
+                        Console.WriteLine("Hvad ville du teste med Begivenheder?");
+                        break;
+                    case 5:
+                        Console.WriteLine("Hvad ville du teste med Medlemmer?");
+                        break;
+                    default:
+                        Console.WriteLine("Indtast venligst et gyldigt tal!");
+                        break;
+                }
 
             }
 
