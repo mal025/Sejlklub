@@ -17,7 +17,7 @@ namespace ProgramConsole
             BoatService boatService = new BoatService(new BoatJSONRepository());
             EventService eventService = new EventService(new EventJSONRepository());
             MemberService memberService = new MemberService(new MemberJSONRepo());
-
+            List<Member> members = memberService.GetAll();
             testCLI();
             void testCLI()
             {
@@ -27,6 +27,7 @@ namespace ProgramConsole
                 Console.WriteLine("3. Booking");
                 Console.WriteLine("4. Begivenheder");
                 Console.WriteLine("5. Medlemmer");
+                Console.WriteLine("6. login");
                 Console.Write("Indsæt dit valg: ");
                 int choice = int.Parse(Console.ReadLine());
                 
@@ -46,6 +47,23 @@ namespace ProgramConsole
                         break;
                     case 5:
                         Console.WriteLine("Hvad ville du teste med Medlemmer?");
+                        break;
+                    case 6:
+                        Console.WriteLine("Indtast venligst Email til brugeren du vil teste");
+                        string testemail = Console.ReadLine();
+                        Console.WriteLine("Indtast Venligst Kodeordet til brugen");
+                        string testkode = Console.ReadLine();
+                        int n = 0;
+                        foreach (var member in members)
+                        {
+                            n++;
+                            if (member.Email == testemail)
+                            {
+                                if (member.Password == testkode) { Console.WriteLine("Du er logget ind!!"); break; }
+                                else { Console.WriteLine("Forkert kodeord, prøv igen"); break; }
+                            }
+                            if (n== members.Count) { Console.WriteLine("Forkert Email"); }
+                        }
                         break;
                     default:
                         Console.WriteLine("Indtast venligst et gyldigt tal!");
