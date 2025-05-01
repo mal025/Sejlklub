@@ -26,5 +26,9 @@ namespace Lib.Model
             ID = iD;
         }
 
+        public Booking ()
+        {
+        }
+
     }
 }

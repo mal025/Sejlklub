@@ -4,8 +4,9 @@ using Lib.Model;
 
 namespace Lib.Repo
 {
-    public class EventJSONRepository : EventCollectionRepo
+    public class EventJSONRepository : IEventRepo
     {
+        protected List<Event> _events = new List<Event>();
         public EventJSONRepository()
         {
             LoadFile();
@@ -20,9 +21,9 @@ namespace Lib.Repo
             _events = JsonSerializer.Deserialize<List<Event>>(json);
         }
 
-        public override void Add(Event theEvent)
+        public void Add(Event theEvent)
         {
-            base.Add(theEvent);
+            _events.Add(theEvent);
         SaveFile();
         }
 

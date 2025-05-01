@@ -30,6 +30,10 @@ namespace Lib.Model
             UserType = userType;
             Password = password;
         }
+        public Member()
+        {
+
+        }
 
         public void AddBooking(Booking booking) // Adds the booking to the members list of bookings
         {

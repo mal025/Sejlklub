@@ -31,5 +31,10 @@ namespace Lib.Model
             Booking = booking;
             ID = id;
         }
+
+        public Event()
+        {
+
+        }
     }
 }

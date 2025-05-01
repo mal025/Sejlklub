@@ -20,10 +20,9 @@ namespace Lib.Model
             Date = date;
             Author = member;
         }
-
-        public Blog(string title)
+        public Blog()
         {
-            Title = title;
+
         }
     }
 }
