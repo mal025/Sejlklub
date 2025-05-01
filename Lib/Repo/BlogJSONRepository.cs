@@ -7,15 +7,18 @@ namespace Lib.Repo
     public class BlogJSONRepository : IBlogRepo
     {
         protected List<Blog> _blogs = new List<Blog>();
+
+        public BlogJSONRepository()
+        {
+            LoadFile();
+        }
+
         public void Add(Blog blog)
         {
             _blogs.Add(blog);
             SaveFile();
         }
-        public BlogJSONRepository()
-        {
-            LoadFile();
-        }
+
 
         //denne metode skal kaldes hver gang vi gerne vil trække data fra vores JSON
         private void LoadFile()
