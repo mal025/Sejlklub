@@ -7,23 +7,23 @@ namespace Lib.Repo
     public class EventJSONRepository : IEventRepo
     {
         protected List<Event> _events = new List<Event>();
-        public EventJSONRepository()
+        public EventJSONRepository(string path)
         {
-            LoadFile();
+            LoadFile(path);
         }
 
         //denne metode skal kaldes hver gang vi gerne vil trække data fra vores JSON
-        private void LoadFile(string path= @"..\..\..\JSON\events.json")
+        private void LoadFile(string path)
         {
-            string json = File.ReadAllText(path);
+            string json = File.ReadAllText(path+"event.json");
 
             _events = JsonSerializer.Deserialize<List<Event>>(json);
         }
 
-        public void Add(Event theEvent)
+        public void Add(Event theEvent, string path)
         {
             _events.Add(theEvent);
-        SaveFile();
+            SaveFile(path);
         }
 
         public List<Event> GetAll()
@@ -32,10 +32,10 @@ namespace Lib.Repo
         }
 
         //denne metode skal kaldes når vi vil putte data i vores JSON
-        private void SaveFile(string path = @"..\..\..\JSON\events.json")
+        private void SaveFile(string path)
         {
             
-            File.WriteAllText(path, JsonSerializer.Serialize(_events));
+            File.WriteAllText(path+"event.json", JsonSerializer.Serialize(_events));
         }
 
         public Event GetByID(int id)

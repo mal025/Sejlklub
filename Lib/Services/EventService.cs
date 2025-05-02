@@ -20,9 +20,9 @@ namespace Lib.Services
         {
             return _eventRepo.GetAll();
         }
-        public void Add(Event theEvent)
+        public void Add(Event theEvent, string path)
         {
-            _eventRepo.Add(theEvent);
+            _eventRepo.Add(theEvent, path);
         }
 
         public Event GetByID(int id)

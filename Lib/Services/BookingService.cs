@@ -21,13 +21,13 @@ namespace Lib.Services
             return _bookingRepo.GetAll();
         }
 
-        public void Add(Booking booking)
+        public void Add(Booking booking, string path)
         {
-            _bookingRepo.Add(booking);
+            _bookingRepo.Add(booking, path);
         }
-        public void RemoveByID(int id)
+        public void RemoveByID(int id, string path)
         {
-            _bookingRepo.RemoveByID(id);
+            _bookingRepo.RemoveByID(id, path);
         }
         public Booking GetByID(int id)
         {
