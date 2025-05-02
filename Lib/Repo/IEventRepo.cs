@@ -10,7 +10,7 @@ namespace Lib.Repo
     public interface IEventRepo
     {
         public List<Event> GetAll();
-        public void Add(Event theEvent);
+        public void Add(Event theEvent, string path);
 
         public Event GetByID(int id);
     }

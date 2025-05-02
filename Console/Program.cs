@@ -46,7 +46,7 @@ namespace ProgramConsole
                         Console.WriteLine("Hvad ville du teste med Både?");
                         break;
                     case 3:
-                        TestBooking(boatService, bookingService, boats);
+                        TestBooking(boatService, bookingService, boats, path);
                         break;
                     case 4:
                         Console.WriteLine("Hvad ville du teste med Begivenheder?");
@@ -83,7 +83,7 @@ namespace ProgramConsole
             }
         }
 
-        public static void TestBooking(BoatService boatService, BookingService bookingService, List<Boat> boats)
+        public static void TestBooking(BoatService boatService, BookingService bookingService, List<Boat> boats, string path)
         {
             Console.WriteLine("Hvad ville du teste med Booking?");
             Console.WriteLine("1. Se alle bookings");
@@ -132,7 +132,7 @@ namespace ProgramConsole
                     int bookingID = random.Next(0, 100000000);
                     // Creates the booking
                     Booking newBooking = new Booking(timeFrame, boatChoice, description, type, bookingID);
-                    bookingService.Add(newBooking);
+                    bookingService.Add(newBooking, path);
                     break;
                 case 3:
                     Console.WriteLine("Indtast ID på booking du ville fjerne");

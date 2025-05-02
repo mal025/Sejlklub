@@ -10,8 +10,8 @@ namespace Lib.Repo
     public interface IBookingRepo
     {
         public List<Booking> GetAll();
-        public void Add(Booking booking);
-        public void RemoveByID(int id);
+        public void Add(Booking booking, string path);
+        public void RemoveByID(int id, string path);
         public Booking GetByID(int id);
 
 

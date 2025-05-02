@@ -8,7 +8,7 @@ namespace Lib.Repo
     {
         protected List<Blog> _blogs = new List<Blog>();
 
-        public BlogJSONRepository(string path)
+        public BlogJSONRepository(string path= @"\JSON\")
         {
             LoadFile(path);
         }
@@ -18,7 +18,7 @@ namespace Lib.Repo
             return _blogs;
         }
 
-        public void Add(Blog blog, string path)
+        public void Add(Blog blog, string path= @"\JSON\")
         {
             _blogs.Add(blog);
             SaveFile(path);

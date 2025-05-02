@@ -7,7 +7,7 @@ namespace Lib.Repo
     public class MemberJSONRepo : IMemberRepo
     {
         protected List<Member> _members = new List<Member>();
-        public MemberJSONRepo(string path)
+        public MemberJSONRepo(string path = @"..\Web\JSON\")
         {
             path += "members.json";
             LoadFile(path);
@@ -22,7 +22,7 @@ namespace Lib.Repo
             _members = JsonSerializer.Deserialize<List<Member>>(json);
         }
 
-        public void Add(Member member,string path)
+        public void Add(Member member, string path = @"..\Web\JSON\")
         {
             _members.Add(member);
             SaveFile(path);

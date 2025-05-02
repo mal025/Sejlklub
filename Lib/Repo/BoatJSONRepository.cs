@@ -8,7 +8,7 @@ namespace Lib.Repo
     public class BoatJSONRepository : IBoatRepo
     {
         protected List<Boat> _boats = new List<Boat>();
-        public BoatJSONRepository(string path)
+        public BoatJSONRepository(string path = @"\JSON\")
         {
 
             LoadFile(path);
@@ -22,7 +22,7 @@ namespace Lib.Repo
             
             _boats = JsonSerializer.Deserialize<List<Boat>>(json);
         }
-        public void Add(Boat boat, string path)
+        public void Add(Boat boat, string path = @"\JSON\")
         {
             _boats.Add(boat);
             SaveFile(path);

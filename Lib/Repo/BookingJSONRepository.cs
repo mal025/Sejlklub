@@ -8,7 +8,7 @@ namespace Lib.Repo
     public class BookingJSONRepository : IBookingRepo
     {
         public List<Booking> _bookings = new List<Booking>();
-        public BookingJSONRepository(string path)
+        public BookingJSONRepository(string path = @"\JSON\")
         {
             LoadFile(path);
         }
@@ -22,7 +22,7 @@ namespace Lib.Repo
             _bookings = JsonSerializer.Deserialize<List<Booking>>(json);
         }
 
-        public void Add(Booking booking, string path)
+        public void Add(Booking booking, string path = @"\JSON\")
         {
             _bookings.Add(booking);
             SaveFile(path);
