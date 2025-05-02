@@ -11,5 +11,7 @@ namespace Lib.Repo
     {
         public List<Event> GetAll();
         public void Add(Event theEvent);
+
+        public Event GetByID(int id);
     }
 }

@@ -37,5 +37,19 @@ namespace Lib.Repo
             
             File.WriteAllText(path, JsonSerializer.Serialize(_events));
         }
+
+        public Event GetByID(int id)
+        {
+            foreach(Event theEvent in _events)
+            {
+                if (id == theEvent.ID)
+                {
+                    return theEvent;
+                }
+            }
+            
+            return null;
+        }
+
     }
 }
