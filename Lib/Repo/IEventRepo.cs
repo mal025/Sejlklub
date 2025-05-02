@@ -9,6 +9,7 @@ namespace Lib.Repo
 {
     public interface IEventRepo
     {
+        public List<Event> GetAll();
         public void Add(Event theEvent);
     }
 }

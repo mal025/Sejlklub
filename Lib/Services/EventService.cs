@@ -16,6 +16,10 @@ namespace Lib.Services
             _eventRepo = eventRepo;
         }
 
+        public List<Event> GetAll()
+        {
+            return _eventRepo.GetAll();
+        }
         public void Add(Event theEvent)
         {
             _eventRepo.Add(theEvent);

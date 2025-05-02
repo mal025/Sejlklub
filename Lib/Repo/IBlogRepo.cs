@@ -9,6 +9,7 @@ namespace Lib.Repo
 {
     public interface IBlogRepo
     {
+        public List<Blog> GetAll();
         public void Add(Blog blog);
     }
 }
