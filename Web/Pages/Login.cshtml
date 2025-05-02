@@ -10,10 +10,10 @@
 			<input type="submit" value="Login" />
 		</form>
 		<div>
-			@if (Model.LoggedIn)
+			@if (Model.LoggedIn == true)
 			{
 				<div class="loggedIn"> 
-
+					<p>Du er logget ind</p>
 				</div>
 			}
 		</div>
