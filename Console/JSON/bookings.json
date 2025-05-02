@@ -1,1 +1,98 @@
-[{"Member":null,"TimeFrame":null,"Boat":null,"Description":null,"Type":null,"ID":0},{"Member":null,"TimeFrame":["2025-05-02T07:07:46.0885595+02:00","2025-05-02T07:07:46.1038383+02:00"],"Boat":{"Capacity":4,"Name":"Wave Rider","ID":2,"Type":"Motorboat","Model":"Yamaha 242X","SailNumber":0,"MotorInformation":"Twin 1.8L Yamaha marine engines","Measurements":"7.32m x 2.59m","BuildYear":2021,"Description":"Sporty and agile, perfect for weekend getaways."},"Description":"En lille sejltur","Type":"Personlig","ID":129488},{"Member":null,"TimeFrame":["2025-05-02T07:08:02.9702235+02:00","2025-05-02T07:08:02.970291+02:00"],"Boat":{"Capacity":4,"Name":"Wave Rider","ID":2,"Type":"Motorboat","Model":"Yamaha 242X","SailNumber":0,"MotorInformation":"Twin 1.8L Yamaha marine engines","Measurements":"7.32m x 2.59m","BuildYear":2021,"Description":"Sporty and agile, perfect for weekend getaways."},"Description":"En lille sejltur","Type":"Personlig","ID":129488},{"Member":null,"TimeFrame":["2025-05-02T07:13:41.1919429+02:00","2025-05-02T07:13:41.1922597+02:00"],"Boat":{"Capacity":10,"Name":"Blue Marlin","ID":5,"Type":"Fishing Boat","Model":"Boston Whaler 370 Outrage","SailNumber":0,"MotorInformation":"Triple Mercury Verado 350","Measurements":"11.28m x 3.5m","BuildYear":2017,"Description":"Fully equipped for deep sea fishing."},"Description":"Fordi","Type":"Alene","ID":33675264},{"Member":null,"TimeFrame":["2025-05-02T09:03:21.1843078+02:00","2025-05-02T09:03:21.1845484+02:00"],"Boat":{"Capacity":12,"Name":"Ocean Queen","ID":3,"Type":"Catamaran","Model":"Lagoon 42","SailNumber":54321,"MotorInformation":"2x Yanmar 57 HP","Measurements":"12.80m x 7.70m","BuildYear":2020,"Description":"Luxurious and stable catamaran for charter use."},"Description":"1","Type":"1","ID":248516249}]
+[
+    {
+        "Member": null,
+        "TimeFrame": null,
+        "Boat": null,
+        "Description": null,
+        "Type": null,
+        "ID": 0
+    },
+    {
+        "Member": null,
+        "TimeFrame": [
+            "2025-05-02T07:07:46.0885595+02:00",
+            "2025-05-02T07:07:46.1038383+02:00"
+        ],
+        "Boat": {
+            "Capacity": 4,
+            "Name": "Wave Rider",
+            "ID": 2,
+            "Type": "Motorboat",
+            "Model": "Yamaha 242X",
+            "SailNumber": 0,
+            "MotorInformation": "Twin 1.8L Yamaha marine engines",
+            "Measurements": "7.32m x 2.59m",
+            "BuildYear": 2021,
+            "Description": "Sporty and agile, perfect for weekend getaways."
+        },
+        "Description": "En lille sejltur",
+        "Type": "Personlig",
+        "ID": 129488
+    },
+    {
+        "Member": null,
+        "TimeFrame": [
+            "2025-05-02T07:08:02.9702235+02:00",
+            "2025-05-02T07:08:02.970291+02:00"
+        ],
+        "Boat": {
+            "Capacity": 4,
+            "Name": "Wave Rider",
+            "ID": 2,
+            "Type": "Motorboat",
+            "Model": "Yamaha 242X",
+            "SailNumber": 0,
+            "MotorInformation": "Twin 1.8L Yamaha marine engines",
+            "Measurements": "7.32m x 2.59m",
+            "BuildYear": 2021,
+            "Description": "Sporty and agile, perfect for weekend getaways."
+        },
+        "Description": "En lille sejltur",
+        "Type": "Personlig",
+        "ID": 129488
+    },
+    {
+        "Member": null,
+        "TimeFrame": [
+            "2025-05-02T07:13:41.1919429+02:00",
+            "2025-05-02T07:13:41.1922597+02:00"
+        ],
+        "Boat": {
+            "Capacity": 10,
+            "Name": "Blue Marlin",
+            "ID": 5,
+            "Type": "Fishing Boat",
+            "Model": "Boston Whaler 370 Outrage",
+            "SailNumber": 0,
+            "MotorInformation": "Triple Mercury Verado 350",
+            "Measurements": "11.28m x 3.5m",
+            "BuildYear": 2017,
+            "Description": "Fully equipped for deep sea fishing."
+        },
+        "Description": "Fordi",
+        "Type": "Alene",
+        "ID": 33675264
+    },
+    {
+        "Member": null,
+        "TimeFrame": [
+            "2025-05-02T09:03:21.1843078+02:00",
+            "2025-05-02T09:03:21.1845484+02:00"
+        ],
+        "Boat": {
+            "Capacity": 12,
+            "Name": "Ocean Queen",
+            "ID": 3,
+            "Type": "Catamaran",
+            "Model": "Lagoon 42",
+            "SailNumber": 54321,
+            "MotorInformation": "2x Yanmar 57 HP",
+            "Measurements": "12.80m x 7.70m",
+            "BuildYear": 2020,
+            "Description": "Luxurious and stable catamaran for charter use."
+        },
+        "Description": "1",
+        "Type": "1",
+        "ID": 248516249
+    }
+]

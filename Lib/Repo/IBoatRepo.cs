@@ -13,5 +13,7 @@ namespace Lib.Repo
 
         public void Add(Boat boat);
 
+        public Boat GetByID(int id);
+
     }
 }

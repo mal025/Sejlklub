@@ -28,5 +28,12 @@ namespace Lib.Services
             _boatRepo.Add(boat);
         }
 
+
+        public Boat GetByID(int id)
+        {
+            return _boatRepo.GetByID(id);
+        }
+
+
     }
 }

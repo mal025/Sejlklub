@@ -11,6 +11,8 @@ namespace Lib.Repo
     {
         public List<Member> GetAll();
         public void Add(Member member);
+        public Member GetByID(int id);
+
 
     }
 }
