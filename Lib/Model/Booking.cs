@@ -15,6 +15,9 @@ namespace Lib.Model
         public string Description { get; set; }
         public string Type { get; set; }
         public int ID { get; set; }
+        public Booking ()
+        {
+        }
 
         public Booking(Member member, List<DateTime> timeFrame, Boat boat, string description, string type, int iD)
         {
@@ -25,10 +28,15 @@ namespace Lib.Model
             Type = type;
             ID = iD;
         }
-
-        public Booking ()
+        public Booking(List<DateTime> timeFrame, Boat boat, string description, string type, int iD)
         {
+            TimeFrame = timeFrame;
+            Boat = boat;
+            Description = description;
+            Type = type;
+            ID = iD;
         }
+
 
     }
 }
