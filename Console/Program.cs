@@ -41,6 +41,27 @@ namespace ProgramConsole
                         break;
                     case 3:
                         Console.WriteLine("Hvad ville du teste med Booking?");
+                        List<DateTime> list = new List<DateTime>();
+                        list.Add(DateTime.Now);
+                        list.Add(DateTime.Now);
+                        List<Boat> boats = boatService.GetAll();
+
+
+                        Console.WriteLine("Hvilken båd?");
+                        int boatChoice = int.Parse(Console.ReadLine());  
+                        
+                        Console.WriteLine("Skriv en description af hvorfor");
+                        string description = Console.ReadLine();
+
+                        Console.WriteLine("Hvilken type? Altså personlig eller gruppe");
+                        string type = Console.ReadLine();
+
+                        Random random = new Random();
+
+
+                        Booking booking1 = new Booking(list, boats[boatChoice], description, type, random.Next(1000000000));
+                        bookingService.Add(booking1);
+
                         break;
                     case 4:
                         Console.WriteLine("Hvad ville du teste med Begivenheder?");
