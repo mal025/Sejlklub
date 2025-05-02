@@ -8,7 +8,9 @@ namespace Web.Pages
 {
     public class LoginModel : PageModel
     {
+        [BindProperty]
         public string testemail { get; set; }
+        [BindProperty]
         public string testkode { get; set; }
         [BindProperty]
         public bool LoggedIn { get; set; }
