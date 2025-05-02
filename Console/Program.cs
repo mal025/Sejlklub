@@ -18,6 +18,8 @@ namespace ProgramConsole
             EventService eventService = new EventService(new EventJSONRepository());
             MemberService memberService = new MemberService(new MemberJSONRepo());
             List<Member> members = memberService.GetAll();
+            List<Boat> boats = boatService.GetAll();
+
             testCLI();
             void testCLI()
             {
@@ -30,6 +32,7 @@ namespace ProgramConsole
                 Console.WriteLine("6. login");
                 Console.Write("Indsæt dit valg: ");
                 int choice = int.Parse(Console.ReadLine());
+
                 
                 switch (choice)
                 {
@@ -40,7 +43,7 @@ namespace ProgramConsole
                         Console.WriteLine("Hvad ville du teste med Både?");
                         break;
                     case 3:
-                        Booking(boatService, bookingService);
+                        Booking(boatService, bookingService, boats);
                         break;
                     case 4:
                         Console.WriteLine("Hvad ville du teste med Begivenheder?");
@@ -76,13 +79,16 @@ namespace ProgramConsole
 
         }
 
-        public static void Booking(BoatService boatService, BookingService bookingService)
+        public static void Booking(BoatService boatService, BookingService bookingService, List<Boat> boats)
         {
             Console.WriteLine("Hvad ville du teste med Booking?");
             List<DateTime> list = new List<DateTime>();
             list.Add(DateTime.Now);
+
+            DateTime date1 = DateTime.Parse(Console.ReadLine());
+
+
             list.Add(DateTime.Now);
-            List<Boat> boats = boatService.GetAll();
 
 
             Console.WriteLine("Hvilken båd?");
