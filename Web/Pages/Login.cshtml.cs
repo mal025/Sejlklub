@@ -10,6 +10,8 @@ namespace Web.Pages
     {
         public string testemail { get; set; }
         public string testkode { get; set; }
+        [BindProperty]
+        public bool LoggedIn { get; set; }
 
         private MemberService _memberService;
 
@@ -29,7 +31,12 @@ namespace Web.Pages
                 n++;
                 if (member.Email == testemail)
                 {
-                    if (member.Password == testkode) { Debug.WriteLine("Du er logget ind!!"); break; }
+                    if (member.Password == testkode) {
+                        
+                        Debug.WriteLine("Du er logget ind!!");
+                        LoggedIn = true;
+                        break; 
+                    }
                     else { Debug.WriteLine("Forkert kodeord, prøv igen"); break; }
                 }
                 if (n == members.Count) { Debug.WriteLine("Forkert Email"); }

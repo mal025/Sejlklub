@@ -21,3 +21,7 @@ body {
   margin-bottom: 60px;
 }
 
+
+.loggedIn{
+    color:red;
+}

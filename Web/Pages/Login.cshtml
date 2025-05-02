@@ -8,5 +8,13 @@
 			<input type="text" name="Email" asp-for="testemail" placeholder="Navn" />
 			<input type="text" name="Password" asp-for="testkode" placeholder="Password" />
 		</form>
+		<div>
+			@if (Model.LoggedIn)
+			{
+				<div class="loggedIn"> 
+
+				</div>
+			}
+		</div>
 	</main>
 </body>
