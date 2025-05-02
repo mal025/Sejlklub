@@ -26,7 +26,7 @@ namespace ProgramConsole
             {
                 Console.WriteLine("Hillerød Sejlklub test program. Hvad ville du teste?");
                 Console.WriteLine("1. Blog");
-                Console.WriteLine("2. Både");
+                Console.WriteLine("2. Både (Ikke lavet endnu)");
                 Console.WriteLine("3. Booking");
                 Console.WriteLine("4. Begivenheder");
                 Console.WriteLine("5. Medlemmer");
