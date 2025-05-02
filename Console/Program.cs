@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
+using System.Text.Json;
 using Lib.Model;
 using Lib.Repo;
 
@@ -98,7 +100,7 @@ namespace ProgramConsole
                     Console.WriteLine("Dette er alle bookings");
                     foreach (Booking booking in bookingService.GetAll())
                     {
-                        Console.WriteLine(booking);
+                        Console.WriteLine(JsonSerializer.Serialize(booking, new JsonSerializerOptions { WriteIndented = true }));
                     }
                     break;
                 case 2:
