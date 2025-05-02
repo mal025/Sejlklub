@@ -31,6 +31,18 @@ namespace Lib.Repo
             return _boats;
         }
 
+        public Boat GetByID(int id)
+        {
+            foreach (Boat boat in _boats)
+            {
+                if (id == boat.ID)
+                {
+                    return boat;
+                }
+            }
+            return null;
+        }
+
         //denne metode skal kaldes når vi vil putte data i vores JSON
         private void SaveFile()
         {
