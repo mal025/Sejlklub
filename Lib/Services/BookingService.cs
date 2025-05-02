@@ -29,5 +29,10 @@ namespace Lib.Services
         {
             _bookingRepo.RemoveByID(id);
         }
+        public Booking GetByID(int id)
+        {
+            return _bookingRepo.GetByID(id);
+        }
+
     }
 }

@@ -35,7 +35,17 @@ namespace Lib.Repo
             _bookings.RemoveAll(booking => booking.ID == id);
             SaveFile();
         }
-
+        public Booking GetByID(int id)
+        {
+            foreach (Booking booking in _bookings)
+            {
+                if (id == booking.ID)
+                {
+                    return booking;
+                }
+            }
+            return null;
+        }
         //denne metode skal kaldes når vi vil putte data i vores JSON
         private void SaveFile()
         {

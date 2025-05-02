@@ -12,6 +12,7 @@ namespace Lib.Repo
         public List<Booking> GetAll();
         public void Add(Booking booking);
         public void RemoveByID(int id);
+        public Booking GetByID(int id);
 
 
     }
