@@ -22,9 +22,9 @@ namespace Lib.Services
             return _memberRepo.GetAll();
         }
 
-        public void Add(Member member)
+        public void Add(Member member, string path)
         {
-            _memberRepo.Add(member);
+            _memberRepo.Add(member, path);
         }
         public Member GetByID(int id)
         {

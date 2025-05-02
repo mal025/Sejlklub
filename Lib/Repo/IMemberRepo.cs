@@ -10,7 +10,7 @@ namespace Lib.Repo
     public interface IMemberRepo
     {
         public List<Member> GetAll();
-        public void Add(Member member);
+        public void Add(Member member, string path);
         public Member GetByID(int id);
 
 

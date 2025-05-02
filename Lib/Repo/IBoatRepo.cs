@@ -11,7 +11,7 @@ namespace Lib.Repo
     {
         public List<Boat> GetAll();
 
-        public void Add(Boat boat);
+        public void Add(Boat boat, string path);
 
         public Boat GetByID(int id);
 

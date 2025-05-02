@@ -8,9 +8,9 @@ namespace Lib.Repo
     {
         protected List<Blog> _blogs = new List<Blog>();
 
-        public BlogJSONRepository()
+        public BlogJSONRepository(string path)
         {
-            LoadFile();
+            LoadFile(path);
         }
 
         public List<Blog> GetAll()
@@ -18,27 +18,27 @@ namespace Lib.Repo
             return _blogs;
         }
 
-        public void Add(Blog blog)
+        public void Add(Blog blog, string path)
         {
             _blogs.Add(blog);
-            SaveFile();
+            SaveFile(path);
         }
 
 
         //denne metode skal kaldes hver gang vi gerne vil trække data fra vores JSON
-        private void LoadFile(string path = @"..\..\..\JSON\blogs.json")
+        private void LoadFile(string path)
         {
 
-            string json = File.ReadAllText(path);
+            string json = File.ReadAllText(path + "blogs.json");
 
             _blogs = JsonSerializer.Deserialize<List<Blog>>(json);
         }
 
         //denne metode skal kaldes når vi vil putte data i vores JSON
-        private void SaveFile(string path = @"..\..\..\JSON\blogs.json")
+        private void SaveFile(string path)
         {
 
-            File.WriteAllText(path, JsonSerializer.Serialize(_blogs));
+            File.WriteAllText(path + "blogs.json", JsonSerializer.Serialize(_blogs));
         }
     }
 }

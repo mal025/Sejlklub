@@ -12,13 +12,15 @@ namespace ProgramConsole
         static void Main(string[] args)
         {
             // Run all services
-            BlogService blogService = new BlogService(new BlogJSONRepository());
-            BookingService bookingService = new BookingService(new BookingJSONRepository());
-            BoatService boatService = new BoatService(new BoatJSONRepository());
-            EventService eventService = new EventService(new EventJSONRepository());
-            MemberService memberService = new MemberService(new MemberJSONRepo());
+            string path = @"..\..\..\JSON\";
+            BlogService blogService = new BlogService(new BlogJSONRepository(path));
+            BookingService bookingService = new BookingService(new BookingJSONRepository(path));
+            BoatService boatService = new BoatService(new BoatJSONRepository(path));
+            EventService eventService = new EventService(new EventJSONRepository(path));
+            MemberService memberService = new MemberService(new MemberJSONRepo(path));
             List<Member> members = memberService.GetAll();
             List<Boat> boats = boatService.GetAll();
+
 
             testCLI();
             void testCLI()
@@ -43,7 +45,7 @@ namespace ProgramConsole
                         Console.WriteLine("Hvad ville du teste med Både?");
                         break;
                     case 3:
-                        Booking(boatService, bookingService, boats);
+                        Booking(boatService, bookingService, boats, path);
                         break;
                     case 4:
                         Console.WriteLine("Hvad ville du teste med Begivenheder?");
@@ -60,9 +62,6 @@ namespace ProgramConsole
                 }
 
             }
-
-
-
         }
         public static void Login(List<Member> members)
         {
@@ -83,7 +82,7 @@ namespace ProgramConsole
             }
         }
 
-        public static void Booking(BoatService boatService, BookingService bookingService, List<Boat> boats)
+        public static void Booking(BoatService boatService, BookingService bookingService, List<Boat> boats, string path)
         {
             Console.WriteLine("Hvad ville du teste med Booking?");
             List<DateTime> list = new List<DateTime>();
@@ -108,7 +107,7 @@ namespace ProgramConsole
 
 
             Booking booking1 = new Booking(list, boats[boatChoice], description, type, random.Next(100000000));
-            bookingService.Add(booking1);
+            bookingService.Add(booking1, path);
 
         }
     }

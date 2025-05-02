@@ -7,13 +7,14 @@ namespace Lib.Repo
     public class MemberJSONRepo : IMemberRepo
     {
         protected List<Member> _members = new List<Member>();
-        public MemberJSONRepo()
+        public MemberJSONRepo(string path)
         {
-            LoadFile();
+            path += "members.json";
+            LoadFile(path);
         }
 
         //denne metode skal kaldes hver gang vi gerne vil trække data fra vores JSON
-        private void LoadFile(string path = @"..\..\..\JSON\members.json")
+        private void LoadFile(string path)
         {
  
             string json = File.ReadAllText(path);
@@ -21,10 +22,10 @@ namespace Lib.Repo
             _members = JsonSerializer.Deserialize<List<Member>>(json);
         }
 
-        public void Add(Member member)
+        public void Add(Member member,string path)
         {
             _members.Add(member);
-            SaveFile();
+            SaveFile(path);
         }
         public List<Member> GetAll()
         {
@@ -32,9 +33,9 @@ namespace Lib.Repo
         }
 
         //denne metode skal kaldes når vi vil putte data i vores JSON
-        private void SaveFile(string path = @"..\..\..\JSON\members.json")
+        private void SaveFile(string path)
         {
-
+            path += "members.json";
             File.WriteAllText(path, JsonSerializer.Serialize(_members));
         }
 

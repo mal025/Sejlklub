@@ -22,9 +22,9 @@ namespace Lib.Services
             return _blogRepo.GetAll();
         }
 
-        public void Add(Blog blog)
+        public void Add(Blog blog, string path)
         {
-            _blogRepo.Add(blog);
+            _blogRepo.Add(blog, path);
         }
 
     }
