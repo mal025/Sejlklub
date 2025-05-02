@@ -9,11 +9,17 @@ namespace Web.Pages
     public class LoginModel : PageModel
     {
         [BindProperty]
-        public string testemail { get; set; }
+        public string TestEmail { get; set; }
         [BindProperty]
-        public string testkode { get; set; }
+        public string TestPassword { get; set; }
         [BindProperty]
         public bool LoggedIn { get; set; }
+        [BindProperty]
+        public bool EmailCorrect { get; set; } = true;
+        [BindProperty]
+        public bool PasswordCorrect { get; set; } = true;
+
+
 
         private MemberService _memberService;
 
@@ -31,17 +37,27 @@ namespace Web.Pages
             foreach (Member member in members)
             {
                 n++;
-                if (member.Email == testemail)
+                if (member.Email == TestEmail)
                 {
-                    if (member.Password == testkode) {
+                    if (member.Password == TestPassword) {
                         
                         Debug.WriteLine("Du er logget ind!!");
                         LoggedIn = true;
                         break; 
                     }
-                    else { Debug.WriteLine("Forkert kodeord, prøv igen"); break; }
+                    else 
+                    {
+                        Debug.WriteLine("Forkert kodeord, prøv igen");
+                        PasswordCorrect = false;
+                        break; 
+                    }
                 }
-                if (n == members.Count) { Debug.WriteLine("Forkert Email"); }
+                if (n == members.Count) 
+                {
+                    Debug.WriteLine("Forkert Email");
+                    EmailCorrect = false;
+
+                }
             }
         }
         public void OnGet()

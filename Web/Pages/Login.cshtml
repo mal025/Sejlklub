@@ -5,8 +5,8 @@
 <body>
 	<main>
 		<form method="post">
-			<input type="text" name="testemail" asp-for="testemail" placeholder="Email" />
-			<input type="text" name="testkode" asp-for="testkode" placeholder="Password" />
+			<input type="text" name="TestEmail" asp-for="TestEmail" placeholder="Email" />
+			<input type="text" name="TestPassword" asp-for="TestPassword" placeholder="Password" />
 			<input type="submit" value="Login" />
 		</form>
 		<div>
@@ -14,6 +14,18 @@
 			{
 				<div class="loggedIn"> 
 					<p>Du er logget ind</p>
+				</div>
+			}
+			@if (Model.PasswordCorrect == false)
+			{
+				<div class="wrong">
+					<p>Forkert Password</p>
+				</div>
+			}
+			@if (Model.EmailCorrect == false)
+			{
+				<div class="wrong">
+					<p>Forkert Email</p>
 				</div>
 			}
 		</div>

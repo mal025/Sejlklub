@@ -23,5 +23,8 @@ body {
 
 
 .loggedIn{
+    background-color:lightgreen;
+}
+.wrong{
     background-color:red;
 }
