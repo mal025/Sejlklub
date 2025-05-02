@@ -26,18 +26,18 @@ namespace Lib.Repo
 
 
         //denne metode skal kaldes hver gang vi gerne vil trække data fra vores JSON
-        private void LoadFile()
+        private void LoadFile(string path = @"..\..\..\JSON\blogs.json")
         {
-            string path = @"..\..\..\JSON\blogs.json";
+
             string json = File.ReadAllText(path);
 
             _blogs = JsonSerializer.Deserialize<List<Blog>>(json);
         }
 
         //denne metode skal kaldes når vi vil putte data i vores JSON
-        private void SaveFile()
+        private void SaveFile(string path = @"..\..\..\JSON\blogs.json")
         {
-            string path = @"..\..\..\JSON\blogs.json";
+
             File.WriteAllText(path, JsonSerializer.Serialize(_blogs));
         }
     }
