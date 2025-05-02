@@ -40,28 +40,7 @@ namespace ProgramConsole
                         Console.WriteLine("Hvad ville du teste med Både?");
                         break;
                     case 3:
-                        Console.WriteLine("Hvad ville du teste med Booking?");
-                        List<DateTime> list = new List<DateTime>();
-                        list.Add(DateTime.Now);
-                        list.Add(DateTime.Now);
-                        List<Boat> boats = boatService.GetAll();
-
-
-                        Console.WriteLine("Hvilken båd?");
-                        int boatChoice = int.Parse(Console.ReadLine());  
-                        
-                        Console.WriteLine("Skriv en description af hvorfor");
-                        string description = Console.ReadLine();
-
-                        Console.WriteLine("Hvilken type? Altså personlig eller gruppe");
-                        string type = Console.ReadLine();
-
-                        Random random = new Random();
-
-
-                        Booking booking1 = new Booking(list, boats[boatChoice], description, type, random.Next(1000000000));
-                        bookingService.Add(booking1);
-
+                        Booking(boatService, bookingService);
                         break;
                     case 4:
                         Console.WriteLine("Hvad ville du teste med Begivenheder?");
@@ -70,21 +49,7 @@ namespace ProgramConsole
                         Console.WriteLine("Hvad ville du teste med Medlemmer?");
                         break;
                     case 6:
-                        Console.WriteLine("Indtast venligst Email til brugeren du vil teste");
-                        string testemail = Console.ReadLine();
-                        Console.WriteLine("Indtast Venligst Kodeordet til brugen");
-                        string testkode = Console.ReadLine();
-                        int n = 0;
-                        foreach (var member in members)
-                        {
-                            n++;
-                            if (member.Email == testemail)
-                            {
-                                if (member.Password == testkode) { Console.WriteLine("Du er logget ind!!"); break; }
-                                else { Console.WriteLine("Forkert kodeord, prøv igen"); break; }
-                            }
-                            if (n== members.Count) { Console.WriteLine("Forkert Email"); }
-                        }
+                        Login(members);
                         break;
                     default:
                         Console.WriteLine("Indtast venligst et gyldigt tal!");
@@ -94,6 +59,50 @@ namespace ProgramConsole
             }
 
 
+
+        }
+        public static void Login(List<Member> members)
+        {
+            Console.WriteLine("Indtast venligst Email til brugeren du vil teste");
+            string testemail = Console.ReadLine();
+            Console.WriteLine("Indtast Venligst Kodeordet til brugen");
+            string testkode = Console.ReadLine();
+            int n = 0;
+            foreach (Member member in members)
+            {
+                n++;
+                if (member.Email == testemail)
+                {
+                    if (member.Password == testkode) { Console.WriteLine("Du er logget ind!!"); break; }
+                    else { Console.WriteLine("Forkert kodeord, prøv igen"); break; }
+                }
+                if (n == members.Count) { Console.WriteLine("Forkert Email"); }
+            }
+        }
+
+        public static void Booking(BoatService boatService, BookingService bookingService)
+        {
+            Console.WriteLine("Hvad ville du teste med Booking?");
+            List<DateTime> list = new List<DateTime>();
+            list.Add(DateTime.Now);
+            list.Add(DateTime.Now);
+            List<Boat> boats = boatService.GetAll();
+
+
+            Console.WriteLine("Hvilken båd?");
+            int boatChoice = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Skriv en description af hvorfor");
+            string description = Console.ReadLine();
+
+            Console.WriteLine("Hvilken type? Altså personlig eller gruppe");
+            string type = Console.ReadLine();
+
+            Random random = new Random();
+
+
+            Booking booking1 = new Booking(list, boats[boatChoice], description, type, random.Next(100000000));
+            bookingService.Add(booking1);
 
         }
     }
