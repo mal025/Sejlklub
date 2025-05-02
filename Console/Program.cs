@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using Lib.Model;
 using Lib.Repo;
 
@@ -27,7 +28,7 @@ namespace ProgramConsole
             {
                 Console.WriteLine("Hillerød Sejlklub test program. Hvad ville du teste?");
                 Console.WriteLine("1. Blog");
-                Console.WriteLine("2. Både");
+                Console.WriteLine("2. Både (Ikke lavet endnu)");
                 Console.WriteLine("3. Booking");
                 Console.WriteLine("4. Begivenheder");
                 Console.WriteLine("5. Medlemmer");
@@ -45,7 +46,7 @@ namespace ProgramConsole
                         Console.WriteLine("Hvad ville du teste med Både?");
                         break;
                     case 3:
-                        Booking(boatService, bookingService, boats, path);
+                        TestBooking(boatService, bookingService, boats);
                         break;
                     case 4:
                         Console.WriteLine("Hvad ville du teste med Begivenheder?");
@@ -82,33 +83,64 @@ namespace ProgramConsole
             }
         }
 
-        public static void Booking(BoatService boatService, BookingService bookingService, List<Boat> boats, string path)
+        public static void TestBooking(BoatService boatService, BookingService bookingService, List<Boat> boats)
         {
             Console.WriteLine("Hvad ville du teste med Booking?");
-            List<DateTime> list = new List<DateTime>();
-            list.Add(DateTime.Now);
+            Console.WriteLine("1. Se alle bookings");
+            Console.WriteLine("2. Lave en ny booking");
+            Console.WriteLine("3. Fjerne en booking via ID");
+            Console.Write("Indsæt dit valg: ");
+            int choice = int.Parse(Console.ReadLine());
+            switch (choice)
+            {
+                case 1:
+                    Console.WriteLine("Dette er alle bookings");
+                    foreach (Booking booking in bookingService.GetAll())
+                    {
+                        Console.WriteLine(booking);
+                    }
+                    break;
+                case 2:
+                    Console.WriteLine("Opretter en booking");
+                    // Takes input for the timeframe
+                    Console.WriteLine("Indsæt start tidspunkt for i formatet yyyy-MM-dd HH:mm");
+                    Console.Write("Indsæt dit valg: ");
+                    DateTime startTime = DateTime.Parse(Console.ReadLine());
+                    Console.WriteLine("");
+                    Console.WriteLine("Indsæt slut tidspunkt i formatet yyyy-MM-dd HH:mm");
+                    Console.Write("Indsæt dit valg: ");
+                    DateTime endTime = DateTime.Parse(Console.ReadLine());
+                    Console.WriteLine("");
+                    List<DateTime> timeFrame = new List<DateTime> { startTime, endTime };
+                    // Takes input for the boat
+                    Console.WriteLine("Indsæt hvilket ID på den båd du ville bruge");
+                    Console.Write("Indsæt dit valg: ");
+                    int idChoice = int.Parse(Console.ReadLine());
+                    Boat boatChoice = boatService.GetByID(idChoice);
+                    // Takes input for the description
+                    Console.WriteLine("Hvad skal der ske i din booking?");
+                    Console.Write("Skriv en beskrivelse af booking: ");
+                    string description = Console.ReadLine();
+                    Console.WriteLine();
+                    // Takes input for the type of booking
+                    Console.WriteLine("Hvilken type booking er det? medlem eller booking");
+                    Console.Write("Indsæt (member/booking): ");
+                    string type = Console.ReadLine();
+                    Console.WriteLine();
+                    // Creates an ID
+                    Random random = new Random();
+                    int bookingID = random.Next(0, 100000000);
+                    // Creates the booking
+                    Booking newBooking = new Booking(timeFrame, boatChoice, description, type, bookingID);
+                    bookingService.Add(newBooking);
+                    break;
+                case 3:
+                    Console.WriteLine("Indtast ID på booking du ville fjerne");
 
-            DateTime date1 = DateTime.Parse(Console.ReadLine());
-
-
-            list.Add(DateTime.Now);
-
-
-            Console.WriteLine("Hvilken båd?");
-            int boatChoice = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("Skriv en description af hvorfor");
-            string description = Console.ReadLine();
-
-            Console.WriteLine("Hvilken type? Altså personlig eller gruppe");
-            string type = Console.ReadLine();
-
-            Random random = new Random();
-
-
-            Booking booking1 = new Booking(list, boats[boatChoice], description, type, random.Next(100000000));
-            bookingService.Add(booking1, path);
-
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

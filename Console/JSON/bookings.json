@@ -94,5 +94,27 @@
         "Description": "1",
         "Type": "1",
         "ID": 248516249
+    },
+    {
+        "Member": null,
+        "TimeFrame": [
+            "2025-05-02T11:00:00",
+            "2025-05-02T12:00:00"
+        ],
+        "Boat": {
+            "Capacity": 4,
+            "Name": "Wave Rider",
+            "ID": 2,
+            "Type": "Motorboat",
+            "Model": "Yamaha 242X",
+            "SailNumber": 0,
+            "MotorInformation": "Twin 1.8L Yamaha marine engines",
+            "Measurements": "7.32m x 2.59m",
+            "BuildYear": 2021,
+            "Description": "Sporty and agile, perfect for weekend getaways."
+        },
+        "Description": "Jeg skal ud og transportere narkotika over gr\u00E6nsen",
+        "Type": "member",
+        "ID": 78110490
     }
 ]
