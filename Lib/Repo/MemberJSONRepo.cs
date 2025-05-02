@@ -37,5 +37,17 @@ namespace Lib.Repo
             string path = @"..\..\..\JSON\members.json";
             File.WriteAllText(path, JsonSerializer.Serialize(_members));
         }
+
+        public Member GetByID(int id)
+        {
+            foreach (Member member in _members)
+            {
+                if (id == member.ID)
+                {
+                    return member;
+                }
+            }
+            return null;
+        }
     }
 }

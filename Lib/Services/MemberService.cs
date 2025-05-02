@@ -26,5 +26,10 @@ namespace Lib.Services
         {
             _memberRepo.Add(member);
         }
+        public Member GetByID(int id)
+        {
+            return _memberRepo.GetByID(id);
+        }
+
     }
 }
