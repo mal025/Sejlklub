@@ -17,6 +17,11 @@ namespace Lib.Services
             _blogRepo = blogRepo;
         }
 
+        public List<Blog> GetAll()
+        {
+            return _blogRepo.GetAll();
+        }
+
         public void Add(Blog blog)
         {
             _blogRepo.Add(blog);

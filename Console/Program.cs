@@ -52,21 +52,7 @@ namespace ProgramConsole
                         Console.WriteLine("Hvad ville du teste med Medlemmer?");
                         break;
                     case 6:
-                        Console.WriteLine("Indtast venligst Email til brugeren du vil teste");
-                        string testemail = Console.ReadLine();
-                        Console.WriteLine("Indtast Venligst Kodeordet til brugen");
-                        string testkode = Console.ReadLine();
-                        int n = 0;
-                        foreach (var member in members)
-                        {
-                            n++;
-                            if (member.Email == testemail)
-                            {
-                                if (member.Password == testkode) { Console.WriteLine("Du er logget ind!!"); break; }
-                                else { Console.WriteLine("Forkert kodeord, prøv igen"); break; }
-                            }
-                            if (n== members.Count) { Console.WriteLine("Forkert Email"); }
-                        }
+                        Login(members);
                         break;
                     default:
                         Console.WriteLine("Indtast venligst et gyldigt tal!");
@@ -77,6 +63,24 @@ namespace ProgramConsole
 
 
 
+        }
+        public static void Login(List<Member> members)
+        {
+            Console.WriteLine("Indtast venligst Email til brugeren du vil teste");
+            string testemail = Console.ReadLine();
+            Console.WriteLine("Indtast Venligst Kodeordet til brugen");
+            string testkode = Console.ReadLine();
+            int n = 0;
+            foreach (Member member in members)
+            {
+                n++;
+                if (member.Email == testemail)
+                {
+                    if (member.Password == testkode) { Console.WriteLine("Du er logget ind!!"); break; }
+                    else { Console.WriteLine("Forkert kodeord, prøv igen"); break; }
+                }
+                if (n == members.Count) { Console.WriteLine("Forkert Email"); }
+            }
         }
 
         public static void Booking(BoatService boatService, BookingService bookingService, List<Boat> boats)

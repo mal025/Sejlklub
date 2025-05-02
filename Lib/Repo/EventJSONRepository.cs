@@ -27,6 +27,11 @@ namespace Lib.Repo
         SaveFile();
         }
 
+        public List<Event> GetAll()
+        {
+            return _events;
+        }
+
         //denne metode skal kaldes når vi vil putte data i vores JSON
         private void SaveFile()
         {

@@ -13,6 +13,11 @@ namespace Lib.Repo
             LoadFile();
         }
 
+        public List<Blog> GetAll()
+        {
+            return _blogs;
+        }
+
         public void Add(Blog blog)
         {
             _blogs.Add(blog);
