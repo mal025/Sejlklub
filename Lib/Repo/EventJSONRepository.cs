@@ -7,7 +7,7 @@ namespace Lib.Repo
     public class EventJSONRepository : IEventRepo
     {
         protected List<Event> _events = new List<Event>();
-        public EventJSONRepository(string path = @"\JSON\")
+        public EventJSONRepository(string path = @"..\Web\JSON\")
         {
             LoadFile(path);
         }
@@ -20,7 +20,7 @@ namespace Lib.Repo
             _events = JsonSerializer.Deserialize<List<Event>>(json);
         }
 
-        public void Add(Event theEvent, string path = @"\JSON\")
+        public void Add(Event theEvent, string path = @"..\Web\JSON\")
         {
             _events.Add(theEvent);
             SaveFile(path);
