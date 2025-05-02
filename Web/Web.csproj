@@ -7,15 +7,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="JSON\blogs.json" />
+    <Content Remove="JSON\boats.json" />
+    <Content Remove="JSON\bookings.json" />
+    <Content Remove="JSON\events.json" />
+    <Content Remove="JSON\members.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Lib\Lib.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="JSON\" />
     <Folder Include="wwwroot\Images\" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="JSON\blogs.json" />
+    <None Include="JSON\boats.json" />
+    <None Include="JSON\bookings.json" />
+    <None Include="JSON\events.json" />
+    <None Include="JSON\members.json" />
     <None Include="wwwroot\Images\hilleroed-sejlklub.jpg" />
   </ItemGroup>
 

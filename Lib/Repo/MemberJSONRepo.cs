@@ -13,9 +13,9 @@ namespace Lib.Repo
         }
 
         //denne metode skal kaldes hver gang vi gerne vil trække data fra vores JSON
-        private void LoadFile()
+        private void LoadFile(string path = @"..\..\..\JSON\members.json")
         {
-            string path = @"..\..\..\JSON\members.json";
+ 
             string json = File.ReadAllText(path);
 
             _members = JsonSerializer.Deserialize<List<Member>>(json);
@@ -32,10 +32,22 @@ namespace Lib.Repo
         }
 
         //denne metode skal kaldes når vi vil putte data i vores JSON
-        private void SaveFile()
+        private void SaveFile(string path = @"..\..\..\JSON\members.json")
         {
-            string path = @"..\..\..\JSON\members.json";
+
             File.WriteAllText(path, JsonSerializer.Serialize(_members));
+        }
+
+        public Member GetByID(int id)
+        {
+            foreach (Member member in _members)
+            {
+                if (id == member.ID)
+                {
+                    return member;
+                }
+            }
+            return null;
         }
     }
 }

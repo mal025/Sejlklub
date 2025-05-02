@@ -13,9 +13,9 @@ namespace Lib.Repo
         }
 
         //denne metode skal kaldes hver gang vi gerne vil trække data fra vores JSON
-        private void LoadFile()
+        private void LoadFile(string path = @"..\..\..\JSON\bookings.json")
         {
-            string path = @"..\..\..\JSON\bookings.json";
+ 
             string json = File.ReadAllText(path);
 
             _bookings = JsonSerializer.Deserialize<List<Booking>>(json);
@@ -35,11 +35,21 @@ namespace Lib.Repo
             _bookings.RemoveAll(booking => booking.ID == id);
             SaveFile();
         }
-
-        //denne metode skal kaldes når vi vil putte data i vores JSON
-        private void SaveFile()
+        public Booking GetByID(int id)
         {
-            string path = @"..\..\..\JSON\bookings.json";
+            foreach (Booking booking in _bookings)
+            {
+                if (id == booking.ID)
+                {
+                    return booking;
+                }
+            }
+            return null;
+        }
+        //denne metode skal kaldes når vi vil putte data i vores JSON
+        private void SaveFile(string path = @"..\..\..\JSON\bookings.json")
+        {
+
             File.WriteAllText(path, JsonSerializer.Serialize(_bookings));
         }
     }

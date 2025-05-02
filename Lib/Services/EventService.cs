@@ -24,5 +24,10 @@ namespace Lib.Services
         {
             _eventRepo.Add(theEvent);
         }
+
+        public Event GetByID(int id)
+        {
+            return _eventRepo.GetByID(id);
+        }
     }
 }
